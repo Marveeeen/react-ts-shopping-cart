@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createContext, useContext } from "react";
 import { ShoppingCart } from "../../components/";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
-import { TShoppingCartProviderProps, TShoppingCartContext, TCartItem } from './type'
+import { TShoppingCartProviderProps, TShoppingCartContext, TCartItem, IStoreItems } from './type'
 
 const ShoppingCartContext = createContext({} as TShoppingCartContext );
 
@@ -11,8 +11,19 @@ export function useShoppingCart() {
 }
 
 export function ShoppingCartProvider({ children } : TShoppingCartProviderProps ) {
+  const [storeItems, setStoreItems] = useState<IStoreItems[]>([])
   const [cartItems, setCartItems] = useLocalStorage<TCartItem[]>('shopping-cart',[])
   const [isOpen, setIsOpen] = useState(false)
+
+  useEffect(() => {
+      fetch('http://127.0.0.1:5173/react-ts-shopping-cart/data/items.json')
+        .then(resp => resp.json())
+        .then(data => setStoreItems(data))
+  }, [])
+
+  useEffect(() => {
+    if(cartItems.length === 0) setIsOpen(false)
+  }, [cartItems])
 
   const openCart = () => setIsOpen(true)
   const closeCart = () => setIsOpen(false)
@@ -56,6 +67,7 @@ export function ShoppingCartProvider({ children } : TShoppingCartProviderProps )
         increaseItemQuantity,
         decreaseItemQuantity,
         removeFromCart,
+        storeItems,
         cartItems,
         cartQuantity,
         openCart,
