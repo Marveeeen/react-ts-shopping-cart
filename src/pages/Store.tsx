@@ -1,9 +1,10 @@
 import { Row, Col } from 'react-bootstrap';
 
+//@ts-ignore
 import { StoreItem } from '../components';
-import { useShoppingCart } from '../context/ShoppingCartContext/ShoppingCartContext';
+//@ts-ignore
+import { useShoppingCart } from '../context';
 import { IStoreItems } from '../context/ShoppingCartContext/type';
-
 export function Store () {
     const { storeItems } = useShoppingCart()
     return (
