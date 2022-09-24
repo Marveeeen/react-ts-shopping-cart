@@ -1,8 +1,11 @@
 import { Routes, Route } from "react-router-dom";
 import { Container } from "react-bootstrap";
 
+//@ts-ignore
 import { Home, Store, About } from "./pages";
+//@ts-ignore
 import { Navbar } from "./components";
+//@ts-ignore
 import { ShoppingCartProvider } from "./context";
 
 function App() {

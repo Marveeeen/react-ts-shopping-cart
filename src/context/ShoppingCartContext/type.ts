@@ -13,7 +13,7 @@ export type TShoppingCartContext = {
     removeFromCart: (id: number) => void
     cartQuantity: number
     cartItems: TCartItem[]
-    storeItems: 
+    storeItems: IStoreItems[]
 }
 
 export type TCartItem = {

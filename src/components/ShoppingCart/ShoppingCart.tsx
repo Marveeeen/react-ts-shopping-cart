@@ -1,5 +1,6 @@
 import { Offcanvas, Stack } from "react-bootstrap";
 
+//@ts-ignore
 import { useShoppingCart } from "../../context";
 import { IStoreItems,TCartItem } from "../../context/ShoppingCartContext/type";
 import { formatCurrency } from "../../utilities/formatCurrency";

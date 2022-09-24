@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { createContext, useContext } from "react";
+
+//@ts-ignore
 import { ShoppingCart } from "../../components/";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { TShoppingCartProviderProps, TShoppingCartContext, TCartItem, IStoreItems } from './type'

@@ -1,5 +1,6 @@
 import { Button, Stack } from 'react-bootstrap'
 
+//@ts-ignore
 import { useShoppingCart } from "../../context";
 import { IStoreItems } from '../../context/ShoppingCartContext/type';
 import { formatCurrency } from "../../utilities/formatCurrency";
