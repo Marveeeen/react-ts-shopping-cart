@@ -1,8 +1,11 @@
 import { Navbar as NavbarBs, Container, Nav, Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
+//@ts-ignore
 import { navDetails } from "./constant";
+//@ts-ignore
 import { ShoppingCart } from "../../assets/ShoppingCart";
+//@ts-ignore
 import { useShoppingCart } from "../../context/";
 
 export function Navbar() {
