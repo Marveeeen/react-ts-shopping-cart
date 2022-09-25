@@ -6,6 +6,8 @@ import { ShoppingCart } from "../../components/";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { TShoppingCartProviderProps, TShoppingCartContext, TCartItem, IStoreItems } from './type'
 
+import storeItemDatas from '../../data/items.json'
+
 const ShoppingCartContext = createContext({} as TShoppingCartContext );
 
 export function useShoppingCart() {
@@ -18,9 +20,7 @@ export function ShoppingCartProvider({ children } : TShoppingCartProviderProps )
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
-      fetch('http://127.0.0.1:5173/react-ts-shopping-cart/data/items.json')
-        .then(resp => resp.json())
-        .then(data => setStoreItems(data))
+      setStoreItems(storeItemDatas);
   }, [])
 
   useEffect(() => {
