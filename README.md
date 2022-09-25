@@ -1,9 +1,9 @@
 # SHOPPING CART
 Simple react-ts app that allows user to add, increase, delete and remove item from the cart and also check the cart with the total prices.
 
-**Link to project:** https://marveeeen.github.io/starter-react-app/
+**Link to project:** https://marveeeen.github.io/react-ts-shopping-cart/
 
-![pokemon site](https://user-images.githubusercontent.com/97417405/191695955-4dee01b6-ecd7-4827-90d4-c52031c4a466.gif)
+![shopping-cart](https://user-images.githubusercontent.com/97417405/192086176-30fc578d-f8cb-4fc0-a05f-1e7ab78cdc25.gif)
 
 ## How It's Made:
 
@@ -19,6 +19,7 @@ Use context for implementing state management that will handle crud operations a
 - Created utility function for formatting.
 - Context for state management
 - Custom Hooks for local storage implementation.
+
 
 ## Lessons Learned:
 
